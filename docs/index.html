@@ -2,113 +2,121 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Traffic Incident Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traffic Incident Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 </head>
 
 <body>
-  
-  <section class="section">
-    
-    <img src="./../src/SCDF_The_Life_Saving_Force_Logo.png" style="height: 100px;width: 300px;"alt="SCDFxIBM">
-    <h1 class="title is-1"  style="
+
+    <section class="section">
+
+        <img src="./../src/scdf.png" style="height: 100px;width: 300px;" alt="SCDFxIBM" />
+        <h1 class="title is-1" style="
     display: inline-block;
-    padding-left: 100px;"
-     >Road Traffic Incidents Dashboard</h1>
-     <hr>
-    <br>
-    
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <h3 class="title is-3">Recent Incidents Detected</h3>
-          <div id="entries"></div>
-      </div>
-    <div class="column">
-          <h3 class="title is-3">Number of traffic incidents this month</h3>
-          <script>
-
-          window.onload = function () {
-            
-          var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-          
-            axisX:{
-              interval: 1
-            },
-            axisY2:{
-              interlacedColor: "rgba(1,77,101,.2)",
-              gridColor: "rgba(1,77,101,.1)",
-              title: "Sort by incidents number per camera"
-            },
-            data: [{
-              type: "bar",
-              name: "companies",
-              axisYType: "secondary",
-              color: "#014D65",
-              dataPoints: [
-                { y: 2, label: "camera 24121" },
-                { y: 3, label: "camera 52332" },
-                { y: 3, label: "camera 41941" },
-                { y: 5, label: "camera 42114" },
-                { y: 5, label: "camera 95424" },
-                { y: 7, label: "camera 23141" },
-                { y: 9, label: "camera 85402" },
-              ]
-            }]
-          });
-          chart.render();
-
-          }
-        </script>
-    <div id="chartContainer" style="height: 400px; width:100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-            </div>
-          </div>
-        </div>
-  </section>
-
-  <script id="entries-template" type="text/x-handlebars-template">
-    {{#each entries}}
-    <div class="box" style='height: -webkit-fill-available'>
-        <iframe src={{image_url}} width="75%" height="65%"></iframe>
-       
+    padding-left: 100px;">Road Traffic Incidents Dashboard</h1>
+        <hr>
         <br>
-          <div class="content">
-            <p>
-              <strong>Camera No: </strong> 
-              {{camera_id}}
-              <br>
-              <strong>Location: </strong>
-              {{location}}
-              <br> 
-              <strong>Date Time: </strong>
-              {{datetime}}
-            </p>
-          </div>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-3">Recent Incidents Detected</h3>
+                    <div id="entries"></div>
+                </div>
+                <div class="column">
+                    <h3 class="title is-3">Number of traffic incidents this month</h3>
+                    <script>
+                        window.onload = function() {
+
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                animationEnabled: true,
+
+                                axisX: {
+                                    interval: 1
+                                },
+                                axisY2: {
+                                    interlacedColor: "rgba(1,77,101,.2)",
+                                    gridColor: "rgba(1,77,101,.1)",
+                                    title: "Sort by incidents number per camera"
+                                },
+                                data: [{
+                                    type: "bar",
+                                    name: "companies",
+                                    axisYType: "secondary",
+                                    color: "#014D65",
+                                    dataPoints: [{
+                                        y: 2,
+                                        label: "camera 24121"
+                                    }, {
+                                        y: 3,
+                                        label: "camera 52332"
+                                    }, {
+                                        y: 3,
+                                        label: "camera 41941"
+                                    }, {
+                                        y: 5,
+                                        label: "camera 42114"
+                                    }, {
+                                        y: 5,
+                                        label: "camera 95424"
+                                    }, {
+                                        y: 7,
+                                        label: "camera 23141"
+                                    }, {
+                                        y: 9,
+                                        label: "camera 85402"
+                                    }, ]
+                                }]
+                            });
+                            chart.render();
+
+                        }
+                    </script>
+                    <div id="chartContainer" style="height: 400px; width:100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script id="entries-template" type="text/x-handlebars-template">
+        {{#each entries}}
+        <div class="box" style='height: -webkit-fill-available'>
+            <iframe src={{image_url}} width="75%" height="65%"></iframe>
+
+            <br>
+            <div class="content">
+                <p>
+                    <strong>Camera No: </strong> {{camera_id}}
+                    <br>
+                    <strong>Location: </strong> {{location}}
+                    <br>
+                    <strong>Date Time: </strong> {{datetime}}
+                </p>
+            </div>
             <button class="btn btn-secondary" onclick='dismiss(this)'>Dismiss</button>
             <button class="btn btn-danger" onclick='accelerate(this)'>Accelerate</button>
-            
-            
-    </div>
-    {{/each}}
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="traffic_incident.js"></script>
-  <style>
-    #entries {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .box{
-      margin-right: 10px;
-      
-    }
+
+
+        </div>
+        {{/each}}
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="traffic_incident.js"></script>
+    <style>
+        #entries {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .box {
+            margin-right: 10px;
+        }
     </style>
 </body>
 
