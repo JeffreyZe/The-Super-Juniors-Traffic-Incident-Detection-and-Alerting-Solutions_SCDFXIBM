@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Road Accident Dashboard</title>
+  <title>Traffic Incident Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -14,22 +14,22 @@
   
   <section class="section">
     
-    <img src="../src/img/SCDF_The_Life_Saving_Force_Logo.png" style="height: 100px;width: 300px;"alt="123123">
+    <img src="./../src/img/SCDF_The_Life_Saving_Force_Logo.png" style="height: 100px;width: 300px;"alt="123123">
     <h1 class="title is-1"  style="
     display: inline-block;
     padding-left: 100px;"
-     >Road Traffic Accident Dashboard</h1>
+     >Road Traffic Incidents Dashboard</h1>
      <hr>
     <br>
     
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h3 class="title is-3">Recent Accidents Detected</h3>
+          <h3 class="title is-3">Recent Incidents Detected</h3>
           <div id="entries"></div>
       </div>
     <div class="column">
-          <h3 class="title is-3">Number of traffic accidents / month</h3>
+          <h3 class="title is-3">Number of traffic incidents this month</h3>
           <script>
 
           window.onload = function () {
@@ -43,6 +43,7 @@
             axisY2:{
               interlacedColor: "rgba(1,77,101,.2)",
               gridColor: "rgba(1,77,101,.1)",
+              title: "Sort by incidents number per camera"
             },
             data: [{
               type: "bar",
@@ -50,13 +51,13 @@
               axisYType: "secondary",
               color: "#014D65",
               dataPoints: [
-                { y: 2, label: "camera_id 24121" },
-                { y: 3, label: "camera_id 52332" },
-                { y: 3, label: "camera_id 41941" },
-                { y: 5, label: "camera_id 42114" },
-                { y: 5, label: "camera_id 95424" },
-                { y: 7, label: "camera_id 23141" },
-                { y: 9, label: "camera_id 85402" },
+                { y: 2, label: "camera 24121" },
+                { y: 3, label: "camera 52332" },
+                { y: 3, label: "camera 41941" },
+                { y: 5, label: "camera 42114" },
+                { y: 5, label: "camera 95424" },
+                { y: 7, label: "camera 23141" },
+                { y: 9, label: "camera 85402" },
               ]
             }]
           });
@@ -79,7 +80,7 @@
         <br>
           <div class="content">
             <p>
-              <strong>CameraId: </strong> 
+              <strong>Camera No: </strong> 
               {{camera_id}}
               <br>
               <strong>Location: </strong>
