@@ -1,8 +1,8 @@
 /**
  * Web application
  */
-const apiUrl = 'https://7033d6a1.us-south.apigw.appdomain.cloud/traffic_incident';
-const guestbook = {
+const apiUrl ="https://7033d6a1.us-south.apigw.appdomain.cloud/traffic_incident";
+const traffic_incident = {
   // retrieve the existing guestbook entries
   get() {
     return $.ajax({
@@ -11,21 +11,6 @@ const guestbook = {
       dataType: 'json'
     });
   },
-  // add a single guestbood entry
-  add(name, email, comment) {
-    console.log('Sending', name, email, comment)
-    return $.ajax({
-      type: 'PUT',
-      url: `${apiUrl}/entries`,
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({
-        name,
-        email,
-        comment,
-      }),
-      dataType: 'json',
-    });
-  }
 };
 
 (function() {
@@ -40,7 +25,7 @@ const guestbook = {
   function loadEntries() {
     console.log('Loading entries...');
     $('#entries').html('Loading entries...');
-    guestbook.get().done(function(result) {
+    traffic_incident.get().done(function(result) {
       if (!result.entries) {
         return;
       }
@@ -55,25 +40,21 @@ const guestbook = {
     });
   }
 
-  // intercept the click on the submit button, add the guestbook entry and
-  // reload entries on success
-  $(document).on('submit', '#addEntry', function(e) {
-    e.preventDefault();
-
-    guestbook.add(
-      $('#name').val().trim(),
-      $('#email').val().trim(), 
-      $('#comment').val().trim()
-    ).done(function(result) {
-      // reload entries
-      loadEntries();
-    }).error(function(error) {
-      console.log(error);
-    });
-  });
-
   $(document).ready(function() {
     prepareTemplates();
     loadEntries();
   });
 })();
+
+
+function dismiss(ele){
+  $(ele).parent().hide(1000);
+}
+
+function accelerate(ele){
+  alert("The accident has been accelerated to the Operations Centre for immediate action.");
+  $(ele).html("Processing");
+  $(ele).removeClass("btn btn-danger");
+  $(ele).addClass('btn btn-warning');
+  
+}
