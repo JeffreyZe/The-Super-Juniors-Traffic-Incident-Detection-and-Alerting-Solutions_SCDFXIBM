@@ -7,10 +7,10 @@
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://callforcode.org/slack) [![Website](https://img.shields.io/badge/View-Website-blue)](https://jeffreyze.github.io/SCDFxIBM-Call-for-Code-2020/)
 
 This is the project done by team The Super Juniors, with the collaboration form 
-- Li Ziyang
-- Tang Jingxiang 
-- Yang Nanyang
-- Wang Xuze
+- [Li Ziyang](https://github.com/LEEZIYA)
+- [Tang Jingxiang](https://github.com/MatOwl)
+- [Yang Nanyang](https://github.com/Nanyangny)
+- [Wang Xuze](https://github.com/JeffreyZe)
 
 ## Contents
 
@@ -35,11 +35,11 @@ Road traffic accidents can pose serious threat to the wellbeings of commuters. S
 
 ## Demo video
 
-[![Watch the video](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/cover.png)](https://youtu.be/)
+[![Watch the video](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/cover.png)](https://youtu.be/LxJkVnd_S3I/)
 
 ## The architecture and solution
 
-![Video transcription/translation app](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/solution.png)
+![Solution architecture diagram](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/solution.png)
 
 1. Firstly, traffic CCTV footage will be used to train the machine learning models (including object detection and classification) using the IBM Waston Studio.
 2. A well trained model would be able to detection whether there is an accident happened. 
@@ -75,4 +75,4 @@ This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE)
 
 ## Acknowledgments
 
-* Thanks for [SCDF](https://SCDF.gov.sg) and [IBM](https://www.ibm.com/sg-en) for offering this opportunities for us to learn and showcase the solutions .
+Thanks for [SCDF](https://SCDF.gov.sg) and [IBM](https://www.ibm.com/sg-en) for offering this opportunities for us to learn and showcase the solutions .
