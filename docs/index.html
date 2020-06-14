@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traffic Incidents Dashboard - real time detection </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-1">
+        Traffic Incident Dashboard 
+      </h1>
+      <p class="subtitle">
+        Real time detection and notification
+      </p>
+
+      <div class="columns">
+        <div class="column">
+          <h3 class="title is-3">
+            Recent accidents detected
+          </h3>
+          <div id="entries"></div>
+        </div>
+        <div class="column">
+          <h3 class="title is-3">
+            Detection history
+          </h3>
+
+          <form id="addEntry">
+          <!--
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your name" id="name">
+              </div>
+            </div>
+          -->
+          <!--
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your email" id="email">
+              </div>
+            </div>
+          -->
+          <!--
+            <div class="field">
+              <label class="label">Comment</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
+              </div>
+            </div>
+          -->
+
+
+<script>
+
+window.onload = function () {
+	
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Number of traffic accidents for the month"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Sort as per camera"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 2, label: "camera_id 24121" },
+			{ y: 3, label: "camera_id 52332" },
+			{ y: 3, label: "camera_id 41941" },
+			{ y: 5, label: "camera_id 42114" },
+			{ y: 5, label: "camera_id 95424" },
+			{ y: 7, label: "camera_id 23141" },
+			{ y: 9, label: "camera_id 85402" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+            <div class="control">
+              <button class="button is-primary">Clear</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="entries-template" type="text/x-handlebars-template">
+    {{#each entries}}
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <iframe src={{image_url}} width="76" height="76"></iframe>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{location}}</strong> <small>{{camera_id}}</small>
+              <br> {{datetime}}
+            </p>
+            <button class="btn btn-secondary">Dismiss</button>
+          </div>
+        </div>
+      </article>
+    </div>
+    {{/each}}
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="traffic_incident.js"></script>
+</body>
+
+</html>
