@@ -50,7 +50,7 @@ Road traffic accidents can pose serious threat to the wellbeings of commuters. S
 
 ## Live demo
 
-You can find a running system to test at [Traffic Incident Detection and Alerting Solutions](https://jeffreyze.github.io/SCDFxIBM-Call-for-Code-2020/)
+You can find a running system to test at [Traffic Incident Detection and Alerting Solutions](https://jeffreyze.github.io/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/)
 
 ## Technologies used
 
