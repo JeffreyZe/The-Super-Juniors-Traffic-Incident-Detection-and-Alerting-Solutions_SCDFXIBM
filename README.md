@@ -35,11 +35,11 @@ Road traffic accidents can pose serious threat to the wellbeings of commuters. S
 
 ## Demo video
 
-[![Watch the video](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/cover.png)](https://youtu.be/LxJkVnd_S3I/)
+[![Watch the video](./src/cover.png)](https://youtu.be/LxJkVnd_S3I/)
 
 ## The architecture and solution
 
-![Solution architecture diagram](https://github.com/JeffreyZe/The-Super-Juniors-Traffic-Incident-Detection-and-Alerting-Solutions_SCDFXIBM/tree/master/src/solution.png)
+![Solution architecture diagram](./src/solution.png)
 
 1. Firstly, traffic CCTV footage will be used to train the machine learning models (including object detection and classification) using the IBM Waston Studio.
 2. A well trained model would be able to detection whether there is an accident happened. 
